@@ -1040,6 +1040,10 @@ public class Validate {
      * @deprecated Use {@link Objects#requireNonNull(Object)}.
      */
     @Deprecated
+    /*@
+    @ requires object != null;
+    @ ensures \result == object;
+ @. */
     public static <T> T notNull(final T object) {
         return notNull(object, DEFAULT_IS_NULL_EX_MESSAGE);
     }

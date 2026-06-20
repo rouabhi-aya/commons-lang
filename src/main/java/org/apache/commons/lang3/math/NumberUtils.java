@@ -1432,6 +1432,10 @@ public class NumberUtils {
      * @return the int represented by the string, or {@code zero} if conversion fails.
      * @since 2.1
      */
+    /*@
+    @ ensures str == null ==> \result == 0;
+    @ ensures str != null && str.equals("") ==> \result == 0;
+    @*/
     public static int toInt(final String str) {
         return toInt(str, 0);
     }
