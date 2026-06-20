@@ -319,6 +319,59 @@
           <excludeFilterFile>${commons.spotbugs.filter}</excludeFilterFile>
         </configuration>
       </plugin>
+      <plugin>
+    <groupId>org.pitest</groupId>
+    <artifactId>pitest-maven</artifactId>
+    <version>1.18.0</version>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.pitest</groupId>
+            <artifactId>pitest-junit5-plugin</artifactId>
+            <version>1.2.2</version>
+        </dependency>
+    </dependencies>
+
+    <configuration>
+
+        <targetClasses>
+            <param>org.apache.commons.lang3.RandomStringUtils</param>
+            <param>org.apache.commons.lang3.BooleanUtils</param>
+            <param>org.apache.commons.lang3.CharUtils</param>
+            <param>org.apache.commons.lang3.math.NumberUtils</param>
+            <param>org.apache.commons.lang3.builder.EqualsBuilder</param>
+            <param>org.apache.commons.lang3.builder.HashCodeBuilder</param>
+            <param>org.apache.commons.lang3.time.DateUtils</param>
+        </targetClasses>
+
+
+        <targetTests>
+            <param>org.apache.commons.lang3.RandomStringUtilsTest</param>
+            <param>org.apache.commons.lang3.BooleanUtilsTest</param>
+            <param>org.apache.commons.lang3.CharUtilsTest</param>
+            <param>org.apache.commons.lang3.math.NumberUtilsTest</param>
+            <param>org.apache.commons.lang3.builder.EqualsBuilderTest</param>
+            <param>org.apache.commons.lang3.builder.HashCodeBuilderAndEqualsBuilderTest</param>
+            <param>org.apache.commons.lang3.time.DateUtilsTest</param>
+        </targetTests>
+
+
+        <outputFormats>
+            <outputFormat>HTML</outputFormat>
+            <outputFormat>XML</outputFormat>
+        </outputFormats>
+
+        <timestampedReports>false</timestampedReports>
+
+        <threads>4</threads>
+
+        <coverageThreshold>80</coverageThreshold>
+        <mutationThreshold>60</mutationThreshold>
+
+        <verbose>true</verbose>
+
+    </configuration>
+</plugin>
     </plugins>
   </build>
   <reporting>
