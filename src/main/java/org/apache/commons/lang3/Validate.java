@@ -1039,7 +1039,13 @@ public class Validate {
      * @see #notNull(Object, String, Object...)
      * @deprecated Use {@link Objects#requireNonNull(Object)}.
      */
-    @Deprecated
+    
+    /*@
+  @ requires object != null;
+  @ ensures \result == object;
+  @ assignable \nothing;
+  @*/
+@Deprecated
     public static <T> T notNull(final T object) {
         return notNull(object, DEFAULT_IS_NULL_EX_MESSAGE);
     }
@@ -1058,6 +1064,7 @@ public class Validate {
      * @throws NullPointerException if the object is {@code null}.
      * @see Objects#requireNonNull(Object)
      */
+    
     public static <T> T notNull(final T object, final String message, final Object... values) {
         return Objects.requireNonNull(object, toSupplier(message, values));
     }

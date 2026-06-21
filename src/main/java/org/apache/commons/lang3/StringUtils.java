@@ -3532,6 +3532,13 @@ public class StringUtils {
      * @since 2.0
      * @since 3.0 Changed signature from isBlank(String) to isBlank(CharSequence)
      */
+    /*@
+    @ public pure
+    @ ensures \result <==> (cs == null || cs.length() == 0 || 
+    @                        (\forall int i; 0 <= i && i < cs.length(); 
+    @                         Character.isWhitespace(cs.charAt(i))));
+    @ assignable \nothing;
+    @*/
     public static boolean isBlank(final CharSequence cs) {
         final int strLen = length(cs);
         for (int i = 0; i < strLen; i++) {

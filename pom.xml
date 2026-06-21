@@ -611,6 +611,13 @@
               <testIncludes>
                 <testInclude>**/*</testInclude>
               </testIncludes>
+               <annotationProcessorPaths>
+               <path>
+                 <groupId>org.openjdk.jmh</groupId>
+                 <artifactId>jmh-generator-annprocess</artifactId>
+                 <version>${commons.jmh.version}</version>
+               </path>
+              </annotationProcessorPaths>
             </configuration>
           </plugin>
           <!-- Hook the benchmarks to the test phase -->

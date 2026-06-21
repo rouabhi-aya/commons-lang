@@ -396,6 +396,9 @@ public class BooleanUtils {
      * @param bool  the boolean to convert
      * @return {@code true} or {@code false}, {@code null} returns {@code false}
      */
+    /*@
+    @ ensures \result == true || \result == false;
+    @*/
     public static boolean toBoolean(final Boolean bool) {
         return bool != null && bool.booleanValue();
     }
