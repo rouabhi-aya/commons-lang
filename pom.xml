@@ -203,6 +203,8 @@
               <inputExclude>src/test/resources/lang-708-input.txt</inputExclude>
               <inputExclude>**/*.svg</inputExclude>
               <inputExclude>**/*.xcf</inputExclude>
+              <inputExclude>Dockerfile</inputExclude>
+              <inputExclude>.dockerignore</inputExclude>
             </inputExcludes>
           </configuration>
         </plugin>
