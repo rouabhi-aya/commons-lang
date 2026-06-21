@@ -3534,8 +3534,8 @@ public class StringUtils {
      */
     /*@
     @ public pure
-    @ ensures \result <==> (cs == null || cs.length() == 0 || 
-    @                        (\forall int i; 0 <= i && i < cs.length(); 
+    @ ensures \result <==> (cs == null || cs.length() == 0 ||
+    @                        (\forall int i; 0 <= i && i < cs.length();
     @                         Character.isWhitespace(cs.charAt(i))));
     @ assignable \nothing;
     @*/
